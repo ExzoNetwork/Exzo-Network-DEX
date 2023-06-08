@@ -42,7 +42,7 @@ const Web3StatusGeneric = styled(ButtonSecondary)`
   ${({ theme }) => theme.flexRowNoWrap}
   width: 100%;
   align-items: center;
-  padding: 0.5rem;
+  padding: 5px 12px;
   border-radius: 8px;
   cursor: pointer;
   user-select: none;
@@ -62,34 +62,68 @@ const Web3StatusError = styled(Web3StatusGeneric)`
 `
 
 const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
-  background-color: ${({ theme }) =>
-    `linear-gradient(90deg, ${theme.dark0} 0%, ${theme.dark2} 35%, ${theme.dark0} 100%);`};
+  background: ${({ theme }) => theme.primary6};
   border: none;
-  color: ${({ theme }) => theme.primaryText1};
+  color: ${({ theme }) => theme.primaryText2};
   font-weight: 500;
 
   :hover,
   :focus {
-    border: 1px solid ${({ theme }) => darken(0.05, theme.primary4)};
+    background: ${({ theme }) => theme.primary6};
+    border: 1px solid ${({ theme }) => theme.primaryText3};
     color: ${({ theme }) => theme.primaryText1};
   }
-
+  // inline-flex gap-0.5 justify-center overflow-hidden text-sm font-medium transition rounded-full
+  // py-1 px-3 hover:bg-zinc-700
+  // dark:ring-emerald-400/20 dark:hover:bg-emerald-400/10 dark:hover:text-emerald-300 dark:hover:ring-emerald-300
   ${({ faded }) =>
     faded &&
     css`
       //box-shadow: 0 0 5px rgba(39, 210, 234, 0.1), 0 0 7px rgba(39, 210, 234, 0.1);
-      background: ${({ theme }) =>
+      // background: ${({ theme }) =>
         `linear-gradient(90deg, ${theme.dark0} 0%, ${theme.dark2} 35%, ${theme.dark0} 100%);`};
-      border: 1px solid ${({ theme }) => theme.primary5};
-      color: ${({ theme }) => theme.primaryText1};
+      background: ${({ theme }) => theme.primary6};
+      border: 1px solid ${({ theme }) => theme.primary6};
+      border-radius: 9999px;
+      color: ${({ theme }) => theme.primaryText2};
 
       :hover,
       :focus {
-        border: 1px solid ${({ theme }) => darken(0.05, theme.primary4)};
-        color: ${({ theme }) => darken(0.05, theme.primaryText1)};
+        background: ${({ theme }) => theme.primary6};
+        border: 1px solid ${({ theme }) => theme.primaryText3};
+        color: ${({ theme }) => theme.primaryText3};
       }
     `}
 `
+// const Web3StatusConnect = styled(Web3StatusGeneric)<{ faded?: boolean }>`
+//   background-color: ${({ theme }) =>
+//     `linear-gradient(90deg, ${theme.dark0} 0%, ${theme.dark2} 35%, ${theme.dark0} 100%);`};
+//   border: none;
+//   color: ${({ theme }) => theme.primaryText1};
+//   font-weight: 500;
+
+//   :hover,
+//   :focus {
+//     border: 1px solid ${({ theme }) => darken(0.05, theme.primary4)};
+//     color: ${({ theme }) => theme.primaryText1};
+//   }
+
+//   ${({ faded }) =>
+//     faded &&
+//     css`
+//       //box-shadow: 0 0 5px rgba(39, 210, 234, 0.1), 0 0 7px rgba(39, 210, 234, 0.1);
+//       background: ${({ theme }) =>
+//         `linear-gradient(90deg, ${theme.dark0} 0%, ${theme.dark2} 35%, ${theme.dark0} 100%);`};
+//       border: 1px solid ${({ theme }) => theme.primary5};
+//       color: ${({ theme }) => theme.primaryText1};
+
+//       :hover,
+//       :focus {
+//         border: 1px solid ${({ theme }) => darken(0.05, theme.primary4)};
+//         color: ${({ theme }) => darken(0.05, theme.primaryText1)};
+//       }
+//     `}
+// `
 
 const Web3StatusConnected = styled(Web3StatusGeneric)<{ pending?: boolean }>`
   background-color: ${({ pending }) => (pending ? 'rgba(39, 210, 234, 0.25)' : `rgba(39, 210, 234, 0.05)`)};
@@ -115,7 +149,7 @@ const Text = styled.p`
   text-overflow: ellipsis;
   white-space: nowrap;
   margin: 0 0.5rem 0 0.25rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   width: fit-content;
   font-weight: 500;
 `

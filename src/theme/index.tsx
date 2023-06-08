@@ -61,25 +61,29 @@ export function colors(darkMode: boolean): Colors {
     advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
 
     //primary colors
-    primary1: darkMode ? '#19bcc8' : '#19bcc8',
-    primary2: darkMode ? '#25CBE5' : '#25CBE5',
-    primary3: darkMode ? '#1dacc2' : '#1dacc2',
+    primary1: darkMode ? '#34d399' : '#34d399',
+    primary2: darkMode ? '#34d399' : '#34d399',
+    primary3: darkMode ? '#34d399' : '#34d399',
     primary4: darkMode ? '#2a8d9c' : '#2a8d9c',
     primary5: darkMode ? '#22646eae' : '#22646eae',
+    primary6: darkMode ? '#34d39933' : '#34d39933',
 
-    primary1_30: 'rgba(39, 210, 234, 0.5)',
-    primaryTransparent: 'rgba(39, 210, 234, 0.2)',
+    primary1_30: 'rgba(110, 231, 183, 0.3)',
+    primary1_10: 'rgba(110, 231, 183, 0.1)',
+    primaryTransparent: 'rgba(110, 231, 183, 0.2)',
 
     // color text
     primaryText1: darkMode ? '#19bcc8' : '#19bcc8',
+    primaryText2: darkMode ? '#34d399' : '#34d399',
+    primaryText3: darkMode ? '#6ee7b7' : '#6ee7b7',
 
     // secondary colors
     secondary1: darkMode ? '#0C5C92' : '#0C5C92',
     secondary2: darkMode ? '#17000b26' : '#F6DDE8',
     secondary3: darkMode ? '#17000b26' : '#FDEAF1',
 
-    secondary1_30: 'rgba(12, 92, 146, 0.3)',
-    secondary1_10: 'rgba(12, 92, 146, 0.1)',
+    secondary1_30: 'rgba(110, 231, 183, 0.3)',
+    secondary1_10: 'rgba(110, 231, 183, 0.1)',
 
     dark0: 'rgba(16, 16, 18, 0.9)',
     dark1: 'rgba(12,26,35,0.9)',
@@ -209,25 +213,25 @@ export const TYPE = {
 export const ThemedBackground = styled.div<{ backgroundColor?: string | undefined }>`
   position: fixed;
   /* top: 0; */
-  top: 30vh;
+  // top: 30vh;
   /* left: calc(-100vw / 2); */
-  right: 0;
+  // right: 0;
   pointer-events: none;
   /* max-width: 100vw !important; */
   width: 100vw;
   /* width: 200vw; */
   height: 200vh;
-  mix-blend-mode: color;
+  // mix-blend-mode: color;
   /* background: ${({ backgroundColor }) =>
     `radial-gradient(50% 50% at 50% 50%, ${
       backgroundColor ? backgroundColor : '#fc077d10'
     } 0%, rgba(255, 255, 255, 0) 100%)`}; */
-  background: transparent radial-gradient(closest-side at 50% 50%, #0c5e94 0%, #20212400 100%) 0% 0% no-repeat
-    padding-box;
-  opacity: 0.6;
+  // background: transparent radial-gradient(closest-side at 50% 50%, #0c5e94 0%, #20212400 100%) 0% 0% no-repeat padding-box;
+  // opacity: 0.6;
+  background-color: rgb(24 24 27);
   transform: translateY(-100vh);
-  will-change: background;
-  transition: background 450ms ease;
+  // will-change: background;
+  // transition: background 450ms ease;
 `
 
 export const FixedGlobalStyle = createGlobalStyle`

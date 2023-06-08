@@ -24,6 +24,8 @@ import { StakingPage } from './Stake/StakingPage'
 import { DisclaimerModal } from 'components/DisclaimerModal'
 import { AssetsListPage } from './Assets/AssetsList'
 
+import Background from 'components/Background'
+
 const AppWrapper = styled.div`
   display: flex;
   flex-flow: column;
@@ -50,6 +52,9 @@ const HeaderWrapper = styled.div`
   width: 100%;
   justify-content: space-between;
   position: fixed;
+  backdrop-filter: blur(8px);
+  background-color: rgb(24 24 27/0.2);
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.075);
   top: 0;
   z-index: 2;
 `
@@ -72,6 +77,7 @@ export default function App() {
           </HeaderWrapper>
           <BodyWrapper>
             <ThemedBackground />
+            <Background />
             <Popups />
             <Polling />
             <Web3ReactManager>

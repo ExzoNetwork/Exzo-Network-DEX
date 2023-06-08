@@ -31,13 +31,13 @@ export const StyledMenuButton = styled.button`
   width: 100%;
   height: 100%;
   border: none;
-  background-color: transparent;
+  // background-color: transparent;
   margin: 0;
   padding: 0;
   height: 35px;
-  background-color: rgba(39, 210, 234, 0.05);
-  box-shadow: 0 0 5px rgba(39, 210, 234, 0.1), 0 0 7px rgba(39, 210, 234, 0.1);
-  border: 1px solid rgba(12, 92, 146, 0.7);
+  background-color: ${({ theme }) => theme.primary6};
+  // box-shadow: 0 0 5px rgba(39, 210, 234, 0.1), 0 0 7px rgba(39, 210, 234, 0.1);
+  border: 1px solid ${({ theme }) => theme.primary6};
 
   padding: 0.15rem 0.5rem;
   border-radius: 0.5rem;
@@ -46,8 +46,8 @@ export const StyledMenuButton = styled.button`
   :focus {
     cursor: pointer;
     outline: none;
-    background-color: ${({ theme }) => theme.darkTransparent};
-    border: 1px solid rgba(39, 210, 234, 0.5);
+    background-color: ${({ theme }) => theme.primary6};
+    border: 1px solid ${({ theme }) => theme.primaryText3};
   }
 
   svg {
@@ -56,7 +56,7 @@ export const StyledMenuButton = styled.button`
 `
 
 export const StyledMenu = styled.div`
-  backdrop-filter: blur(4px) brightness(50%) saturate(150%);
+  // backdrop-filter: blur(4px) brightness(50%) saturate(150%);
   margin-left: 0.5rem;
   display: flex;
   justify-content: center;
@@ -71,8 +71,8 @@ export const MenuFlyout = styled.span<{ flyoutAlignment?: FlyoutAlignment }>`
   min-width: 12.125rem;
   background-color: ${({ theme }) =>
     `linear-gradient(90deg, ${theme.dark0} 0%, ${theme.dark2} 50%, ${theme.dark0} 100%);`};
-  box-shadow: 0 0 5px rgba(39, 210, 234, 0.1), 0 0 7px rgba(39, 210, 234, 0.1);
-  border: 1px solid rgba(12, 92, 146, 0.7);
+  box-shadow: 0 0 5px ${({ theme }) => theme.primary6}, 0 0 7px ${({ theme }) => theme.primary6};
+  border: 1px solid ${({ theme }) => theme.primary6};
   border-radius: 8px;
   padding: 0.5rem;
   display: flex;

@@ -27,7 +27,7 @@ import ExzoLogo from '../../assets/svg/logo.svg'
 import { ExternalLink } from 'theme/components'
 
 const Logo = styled.img`
-  height: 50px;
+  height: 30px;
 `
 
 const HeaderFrame = styled.div<{ showBackground: boolean }>`
@@ -40,7 +40,7 @@ const HeaderFrame = styled.div<{ showBackground: boolean }>`
   width: 100%;
   top: 0;
   position: relative;
-  padding: 1rem;
+  padding: 8px;
   z-index: 21;
   position: relative;
 
@@ -116,10 +116,9 @@ const HeaderRow = styled(RowFixed)`
   /* Adjust margin-left to center text */
 }
 const HeaderLinks = styled(Row)`
-  background: ${({ theme }) =>
-    `linear-gradient(90deg, ${theme.darkTransparent2} 0%, ${theme.secondary1_10} 50%, ${theme.darkTransparent2} 100%);`};
-  border: 1px solid rgba(12, 92, 146, 0.7);
-  box-shadow: 0 0 5px rgba(39, 210, 234, 0.2), 0 0 7px rgba(39, 210, 234, 0.2);
+  background: ${({ theme }) => theme.primary6};
+  border: 1px solid ${({ theme }) => theme.primary6};
+  box-shadow: 0 0 5px ${({ theme }) => theme.primary6}, 0 0 7px ${({ theme }) => theme.primary6};
   margin-left: 44%;
   width: fit-content;
   padding: 4px;
@@ -132,24 +131,42 @@ const HeaderLinks = styled(Row)`
     justify-self: flex-end;
   `};
 `
+// const HeaderLinks = styled(Row)`
+//   background: ${({ theme }) =>
+//     `linear-gradient(90deg, ${theme.darkTransparent2} 0%, ${theme.secondary1_10} 50%, ${theme.darkTransparent2} 100%);`};
+//   border: 1px solid rgba(12, 92, 146, 0.7);
+//   box-shadow: 0 0 5px rgba(39, 210, 234, 0.2), 0 0 7px rgba(39, 210, 234, 0.2);
+//   margin-left: 44%;
+//   width: fit-content;
+//   padding: 4px;
+//   border-radius: 10px;
+//   display: grid;
+//   grid-auto-flow: column;
+//   grid-gap: 10px;
+//   overflow: auto;
+//   ${({ theme }) => theme.mediaWidth.upToMedium`
+//     justify-self: flex-end;
+//   `};
+// `
 
-const AccountElement = styled.div<{ active: boolean }>`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: ${({ theme }) =>
-    `linear-gradient(90deg, ${theme.darkTransparent2} 0%, ${theme.secondary1_10} 50%, ${theme.darkTransparent2} 100%);`};
-  border-radius: 8px;
-  white-space: nowrap;
-  width: 100%;
-  cursor: pointer;
-  border: 1px solid rgba(12, 92, 146, 0.3);
-  box-shadow: 0 0 5px rgba(39, 210, 234, 0.1), 0 0 7px rgba(39, 210, 234, 0.1);
+const AccountElement = styled.div<{ active: boolean }>``
+// const AccountElement = styled.div<{ active: boolean }>`
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   background: ${({ theme }) =>
+//     `linear-gradient(90deg, ${theme.darkTransparent2} 0%, ${theme.secondary1_10} 50%, ${theme.darkTransparent2} 100%);`};
+//   border-radius: 8px;
+//   white-space: nowrap;
+//   width: 100%;
+//   cursor: pointer;
+//   border: 1px solid rgba(12, 92, 146, 0.3);
+//   box-shadow: 0 0 5px rgba(39, 210, 234, 0.1), 0 0 7px rgba(39, 210, 234, 0.1);
 
-  :focus {
-    border: 1px solid blue;
-  }
-`
+//   :focus {
+//     border: 1px solid blue;
+//   }
+// `
 
 const HideSmall = styled.span`
   ${({ theme }) => theme.mediaWidth.upToSmall`
@@ -164,8 +181,9 @@ const HideLarge = styled.span`
 `
 
 const NetworkCard = styled(YellowCard)`
-  border-radius: 8px;
-  padding: 8px 12px;
+  border-radius: 9999px;
+  padding: 5px 12px;
+  font-size: 0.875rem;
   ${({ theme }) => theme.mediaWidth.upToSmall`
     margin: 0;
     margin-right: 0.5rem;
@@ -207,24 +225,60 @@ const StyledNavLink = styled(NavLink).attrs({
   outline: none;
   cursor: pointer;
   text-decoration: none;
-  color: ${({ theme }) => theme.text3};
-  font-size: 1rem;
+  color: ${({ theme }) => theme.text2};
+  font-size: 0.875rem;
   width: fit-content;
   font-weight: 500;
-  padding: 8px 12px;
+  padding: 5px 12px;
 
   &.${activeClassName} {
     border-radius: 0px;
     font-weight: 800;
-    color: ${({ theme }) => theme.text1};
+    color: ${({ theme }) => theme.primaryText3};
   }
 
   :hover,
   :focus {
-    color: ${({ theme }) => darken(0.1, theme.text1)};
+    color: ${({ theme }) => darken(0.1, theme.primaryText3)};
   }
 `
 
+const MainNavLink = styled(NavLink).attrs({
+  activeClassName,
+})`
+  ${({ theme }) => theme.flexRowNoWrap}
+  align-items: left;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  width: fit-content;
+  padding: 5px 12px;
+  font-size: 0.875rem;
+  color: rgb(161 161 170);
+  &.${activeClassName} {
+    border-radius: 0px;
+    color: white;
+  }
+
+  :hover,
+  :focus {
+    color: white;
+  }
+`
+const MainMenu = styled.div`
+  margin-left: 42%;
+  width: fit-content;
+  padding: 4px;
+  border-radius: 10px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  overflow: auto;
+  ${({ theme }) => theme.mediaWidth.upToMedium`
+    justify-self: flex-end;
+  `};
+`
 const StyledExternalLink = styled(ExternalLink).attrs({
   activeClassName,
 })<{ isActive?: boolean }>`
@@ -286,6 +340,13 @@ export const StyledMenuButton = styled.button`
   }
 `
 
+const VerticalLine = styled.div`
+  width: 1px;
+  height: 1.25rem;
+  margin-right: 10px;
+  background-color: hsla(0, 0%, 100%, 0.15);
+`
+
 const NETWORK_LABELS: Record<ChainId, string> = {
   [ChainId.TESTNET]: 'EXZO Testnet',
   [ChainId.MAINNET]: 'EXZO',
@@ -315,8 +376,40 @@ export default function Header() {
         </Title>
       </HeaderRow>
       <HideSmall>
-        <HeaderLinks>
-          <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
+        <MainMenu>
+          <MainNavLink
+            id={`swap-nav-link`}
+            to={'/swap'}
+            isActive={(match, { pathname }) => Boolean(match) || pathname.startsWith('/swap')}
+          >
+            {t('Swap')}
+          </MainNavLink>
+          <MainNavLink
+            id={`pool-nav-link`}
+            to={'/pool'}
+            isActive={(match, { pathname }) =>
+              Boolean(match) || pathname.startsWith('/pools') || pathname.startsWith('/add')
+            }
+          >
+            {t('Pool')}
+          </MainNavLink>
+          <MainNavLink
+            id={`farm-nav-link`}
+            to={'/farm'}
+            isActive={(match, { pathname }) => Boolean(match) || pathname.startsWith('/farm')}
+          >
+            {t('Farm')}
+          </MainNavLink>
+          <MainNavLink
+            id={`stake-nav-link`}
+            to={'/stake'}
+            isActive={(match, { pathname }) => Boolean(match) || pathname.startsWith('/stake')}
+          >
+            {t('Stake')}
+          </MainNavLink>
+        </MainMenu>
+        {/* <HeaderLinks> */}
+        {/* <StyledNavLink id={`swap-nav-link`} to={'/swap'}>
             {t('swap')}
           </StyledNavLink>
           <StyledNavLink
@@ -331,8 +424,8 @@ export default function Header() {
             }
           >
             {t('Liquidity')}
-          </StyledNavLink>
-          {/*
+          </StyledNavLink> */}
+        {/*
           <StyledNavLink
             id={`assets-nav-link`}
             to={'/assets'}
@@ -341,7 +434,7 @@ export default function Header() {
             {t('Assets')}
           </StyledNavLink>
           */}
-          {/*
+        {/*
           <StyledNavLink
             id={`farm-nav-link`}
             to={'/farm'}
@@ -362,16 +455,17 @@ export default function Header() {
             <sup>↗</sup>
           </StyledExternalLink>
           */}
-        </HeaderLinks>
+        {/* </HeaderLinks> */}
       </HideSmall>
       <HeaderControls>
+        <VerticalLine />
         <HeaderElement>
           <HideSmall>
             {chainId && NETWORK_LABELS[chainId] && (
               <NetworkCard title={NETWORK_LABELS[chainId]}>{NETWORK_LABELS[chainId]}</NetworkCard>
             )}
           </HideSmall>
-          <AccountElement active={!!account} style={{ pointerEvents: 'auto' }}>
+          <AccountElement active={!!account}>
             {account && userEthBalance ? (
               <BalanceText style={{ flexShrink: 0 }} pl="0.75rem" pr="0.5rem" fontWeight={500}>
                 {userEthBalance?.toSignificant(4)} <span style={{ color: '#19bcc8' }}>XZO</span>

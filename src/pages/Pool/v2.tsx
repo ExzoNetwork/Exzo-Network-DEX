@@ -147,7 +147,7 @@ export default function Pool() {
                   id="find-pool-button"
                   as={Link}
                   padding="6px 8px"
-                  borderRadius="8px"
+                  borderRadius="9999px"
                   to="/pool/import"
                 >
                   <Text fontWeight={500} fontSize={16}>
@@ -158,7 +158,7 @@ export default function Pool() {
                   id="join-pool-button"
                   as={Link}
                   padding="6px 8px"
-                  borderRadius="8px"
+                  borderRadius="9999px"
                   to="/add/v2/XZO"
                 >
                   <Text fontWeight={500} fontSize={16}>

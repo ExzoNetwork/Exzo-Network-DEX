@@ -8,16 +8,15 @@ export const Glow = css`
   //box-shadow: 0 0 20px rgba(39, 210, 234, 0.1), 0 0 30px rgba(39, 210, 234, 0.1), 0 0 40px rgba(39, 210, 234, 0.1),
   //  0 0 50px rgba(39, 210, 234, 0.1), 0 0 60px rgba(39, 210, 234, 0.1), 0 0 70px rgba(39, 210, 234, 0.1),
   //  0 0 80px rgba(39, 210, 234, 0.1);
-
-  box-shadow: 0 0 10px rgba(39, 210, 234, 0.1), 0 0 15px rgba(39, 210, 234, 0.1), 0 0 20px rgba(39, 210, 234, 0.1),
-    0 0 25px rgba(39, 210, 234, 0.1), 0 0 30px rgba(39, 210, 234, 0.1), 0 0 45px rgba(39, 210, 234, 0.1),
-    0 0 40px rgba(39, 210, 234, 0.1);
+  box-shadow: 0 0 10px rgba(110, 231, 183, 0.1), 0 0 15px rgba(110, 231, 183, 0.1), 0 0 20px rgba(110, 231, 183, 0.1),
+    0 0 25px rgba(110, 231, 183, 0.2), 0 0 30px rgba(110, 231, 183, 0.2), 0 0 45px rgba(110, 231, 183, 0.2),
+    0 0 40px rgba(110, 231, 183, 0.2);
 
   @keyframes glow {
     0% {
-      box-shadow: 0 0 5px rgba(39, 210, 234, 0.1), 0 0 8px rgba(39, 210, 234, 0.1), 0 0 10px rgba(39, 210, 234, 0.1),
-        0 0 17px rgba(39, 210, 234, 0.1), 0 0 15px rgba(39, 210, 234, 0.1), 0 0 18px rgba(39, 210, 234, 0.1),
-        0 0 20px rgba(39, 210, 234, 0.1);
+      box-shadow: 0 0 5px rgba(110, 231, 183, 0.1), 0 0 8px rgba(110, 231, 183, 0.1), 0 0 10px rgba(110, 231, 183, 0.1),
+        0 0 17px rgba(110, 231, 183, 0.2), 0 0 15px rgba(110, 231, 183, 0.2), 0 0 18px rgba(110, 231, 183, 0.2),
+        0 0 20px rgba(110, 231, 183, 0.2);
     }
     50% {
       //  box-shadow: 0 0 20px rgba(39, 210, 234, 0.1), 0 0 30px rgba(39, 210, 234, 0.1), 0 0 40px rgba(39, 210, 234, 0.1),
@@ -68,11 +67,11 @@ export const BodyWrapper = styled.div<{ margin?: string }>`
   margin-top: ${({ margin }) => margin ?? '0px'};
   max-width: 480px;
   width: 100%;
-  background: ${({ theme }) =>
+  // background: ${({ theme }) =>
     `linear-gradient(90deg, ${theme.darkTransparent3} 0%, ${theme.dark2} 50%, ${theme.darkTransparent3} 100%);`};
   border-radius: 8px;
   margin-top: 1rem;
-  border: 1px solid rgba(12, 92, 146, 0.7);
+  border: 1px solid ${({ theme }) => theme.primary6};
   backdrop-filter: blur(4px) saturate(150%);
   ${Glow}
 `

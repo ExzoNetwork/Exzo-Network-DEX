@@ -44,11 +44,15 @@ export interface Colors {
   primary3: Color
   primary4: Color
   primary5: Color
+  primary6: Color
 
+  primary1_10: Color
   primary1_30: Color
   primaryTransparent: Color
 
   primaryText1: Color
+  primaryText2: Color
+  primaryText3: Color
 
   // pinks
   secondary1: Color

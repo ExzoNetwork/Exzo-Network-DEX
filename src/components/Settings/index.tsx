@@ -78,9 +78,10 @@ const StyledMenu = styled.div`
 
 const MenuFlyout = styled.span`
   min-width: 20.125rem;
-  background: ${({ theme }) => `linear-gradient(90deg, ${theme.dark0} 0%, ${theme.dark2} 35%, ${theme.dark0} 100%);`};
-  border: 1px solid rgba(12, 92, 146, 0.7);
-  box-shadow: 0 0 5px rgba(39, 210, 234, 0.1), 0 0 7px rgba(39, 210, 234, 0.1);
+  background: ${({ theme }) =>
+    `linear-gradient(90deg, ${theme.dark0} 0%, ${theme.secondary1_10} 35%, ${theme.dark0} 100%);`};
+  border: 1px solid ${({ theme }) => theme.primary6};
+  box-shadow: 0 0 5px ${({ theme }) => theme.primary6}, 0 0 7px ${({ theme }) => theme.primary6};
   border-radius: 8px;
   backdrop-filter: blur(4px) saturate(150%);
   display: flex;

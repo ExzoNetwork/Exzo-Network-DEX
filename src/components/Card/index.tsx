@@ -45,9 +45,12 @@ export const OutlineCard = styled(Card)`
 `
 
 export const YellowCard = styled(Card)`
-  background: ${({ theme }) =>
+  // background: ${({ theme }) =>
     `linear-gradient(90deg, ${theme.darkTransparent2} 0%, ${theme.dark5} 35%, ${theme.darkTransparent2} 100%);`};
-  color: ${({ theme }) => theme.primaryText1};
+  background: ${({ theme }) => theme.primary6};
+  color: ${({ theme }) => theme.primaryText3};
+  border: 1px solid ${({ theme }) => theme.primary6};
+  box-shadow: none;
   font-weight: 500;
 `
 
